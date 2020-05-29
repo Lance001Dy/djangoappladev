@@ -7,4 +7,5 @@ The Django web application framework is used to build web application projects a
 The repository is private to preserve the intellectual propoerty of PCS and access is granted to selected developers.
 
 Repository administrator: RyanDyer-Dev
+
 Access granted to: .....Please add username here and commit
