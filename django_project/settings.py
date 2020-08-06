@@ -29,6 +29,8 @@ SECRET_KEY = 'flr$=uux5_(05fz89n2*3qyo2l(dj3c0=e1tfxv436qn5)#dm^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS =['https://djangoappladev.herokuapp.com/']
+
 
 
 
