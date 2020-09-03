@@ -13,34 +13,38 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
 	{% if title %}
-		<title>LA-Blog {{ title }} </title>
+		<title>Storage_API {{ title }} </title>
 	{% else %}
-		<title>LA-Blog </title>
+		<title>Storage_API </title>
 	{% endif %}
 </head>
 <body>
 	<header class="site-header">
 	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-	    <div class="container">
-	      <a class="navbar-brand mr-2" href="{% url 'blog-home' %}"><b>Blog App Created by Lance Dyer </b>Blog App v 0.1 </a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	      </button>
-	      <div class="collapse navbar-collapse" id="navbarToggle">
-	        <div class="navbar-nav mr-auto">
-	          <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-	          <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
-	        </div>
+		{% if user.is_authenticated %}
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    		<a class="dropdown-item" href="{% url 'blog-home' %}">Home</a>
+    		<a class="dropdown-item" href="{% url 'blog-about' %}">About</a>
+      		<a class="dropdown-item" href="{% url 'post-create' %}">New Post</a>
+	         <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+			 <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+	          {% else %}
+			<div class="dropdown show">
+  			<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Main Menu
+  			</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+	            <a class="dropdown-item"href="{% url 'login' %}">Login</a>
+	            <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+	          {% endif %}
+  </div>
+</div>
+ <div class="container">
+	<a class="navbar-brand mr-2" href="{% url 'blog-home' %}"><b>Blog App with (Dropbox Storage API) Created by Lance Dyer </b>LADriveBox App v 0.1 </a>
+	      
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav">
-	          {% if user.is_authenticated %}
-	            <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-	            <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-				<a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-	          {% else %}
-	            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-	            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-	          {% endif %}
+	        
 	        </div>
 	      </div>
 	    </div>
