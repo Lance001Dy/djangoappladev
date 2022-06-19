@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 
+
+#####
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -30,9 +31,7 @@ SECRET_KEY = 'flr$=uux5_(05fz89n2*3qyo2l(dj3c0=e1tfxv436qn5)#dm^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://djangoappladev.herokuapp.com/']
-
-
+ALLOWED_HOSTS = ['https://djangoapp007.herokuapp.com']
 
 
 # Application definition
@@ -144,4 +143,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
+
+# Settings to use dropbox as storage

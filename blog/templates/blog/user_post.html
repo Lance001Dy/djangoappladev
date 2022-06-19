@@ -11,6 +11,7 @@
 		    </div>
 		    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
 		    <p class="article-content">{{ post.content }}</p>
+			<a class="btn btn-primary" href="{% url 'blog-home' %}" role="button">Back to HomePage</a>
 		  </div>
 		</article>
 	{% endfor %}
